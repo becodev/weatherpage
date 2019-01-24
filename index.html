@@ -21,15 +21,21 @@
                                 <h5 id="titulodos" class="card-header text-center text-white">Estado del tiempo en: <span class="text-uppercase" id="ciudad"></span></h5> 
                             </div>
                            
-                            <div class="card-body">
+                            <div class="row card-body  justify-content-around">
+                                <div class="col">
                                 <div class="wait text-center">   
                                     <img src="img/spinner.svg" width="100px">
                                 </div>
                                 <div id="data">
-                                        <h5 class="card-title">Temperatura <span id="temperatura"></span></h5>    
-                                        <h5 class="card-title">Humedad <span id="humedad"></span></h5>    
-                                        <h5 class="card-title">Vientos <span id="viento"></span></h5>
-                                </div>                          
+                                        <h5 class="card-title">Temp <span id="temperatura" class="font-weight-bolder"></span></h5>    
+                                        <h5 class="card-title">Humedad <span id="humedad" class="font-weight-bolder"></span></h5>    
+                                        <h5 class="card-title">Vientos <span id="viento" class="font-weight-bolder"></span></h5>
+                                        <h5 class="card-title">Presión <span id="presion" class="font-weight-bolder"></span></h5>
+                                </div>    
+                            </div>                      
+                                <div id="icon"class="col">
+                                    <img id="svgicon" src="img/drop.svg" width="110px" alt="">
+                                </div>
                             </div>
                           </div>
             </div>
