@@ -16,7 +16,7 @@ function obtenerCoordenadas() {
 
 function consulta(lat,lon) {
     const API_KEY = `4d66756d2f1463d481841de10d882e5a`;
-    const url = 'http://api.openweathermap.org/data/2.5/weather';
+    const url = 'https://api.openweathermap.org/data/2.5/weather';
     const URL_API = `${url}?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
     fetch(URL_API).then(data => {
