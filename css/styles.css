@@ -1,0 +1,12 @@
+.none {
+    display:none;
+}
+
+.row {
+    justify-items: center;
+}
+
+.container-fluid {
+    height: 100vh;
+    align-items:center;
+}
