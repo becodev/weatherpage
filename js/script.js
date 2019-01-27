@@ -53,7 +53,7 @@ function consulta(lat,lon) {
 
 // SETEO DE ICONOS SEGUN EL TIEMPO METEOROLOGICO
 function getWeatherState(weather) {
-    const { icon } = weather[0];
+    const { id } = weather[0];
     const CLOUDY =  "cloudy.svg";
     const SUN = "sunny.svg";
     const RAIN =  "rain.svg";
@@ -61,15 +61,15 @@ function getWeatherState(weather) {
     const THUNDER = "flash.svg";
     const DRIZZLE = "drop.svg";
 
-    if(icon < 300) {
+    if(id< 300) {
         return THUNDER;
-    } else if (icon < 400) {
+    } else if (id < 400) {
         return DRIZZLE;
-    } else if (icon < 600) {
+    } else if (id < 600) {
         return RAIN;
-    } else if (icon < 700) {
+    } else if (id < 700) {
         return SNOW;
-    } else if (icon === 800) {
+    } else if (id === 800) {
         return SUN;
     } else {
         return CLOUDY;
