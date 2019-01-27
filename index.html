@@ -9,35 +9,41 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <title>Weather data</title>
-
   </head>
-  <body class="">
+
+  <body>
     <div class="container-fluid bg-light">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-8 col-lg-5 mt-5">
+        <div class="row center">
+            <div class="col-12 col-sm-9 col-md-7 col-lg-5 mt-5 align-content-center">
                     <div class="card">
-                            <div id="title" class="">
+                            <div id="title">
                                 <h5 id="titulouno" class="card-header text-center text-white">Esperando ubicacion</h5>    
                                 <h5 id="titulodos" class="card-header text-center text-white">Estado del tiempo en: <span class="text-uppercase" id="ciudad"></span></h5> 
                             </div>
                            
-                            <div class="row card-body  justify-content-around">
-                                <div class="col">
-                                <div class="wait text-center">   
-                                    <img src="img/spinner.svg" width="100px">
-                                </div>
-                                <div id="data">
-                                        <h5 class="card-title">Temp <span id="temperatura" class="font-weight-bolder"></span></h5>    
-                                        <h5 class="card-title">Humedad <span id="humedad" class="font-weight-bolder"></span></h5>    
-                                        <h5 class="card-title">Vientos <span id="viento" class="font-weight-bolder"></span></h5>
-                                        <h5 class="card-title">Presión <span id="presion" class="font-weight-bolder"></span></h5>
-                                </div>    
-                            </div>                      
-                                <div id="icon"class="col">
-                                    <img id="svgicon" src="img/drop.svg" width="110px" alt="">
-                                </div>
+                            <div class="card-body">
+                                <!-- SPINNER -->
+                                    <div class="wait text-center">   
+                                            <img src="img/spinner.svg" width="100px">
+                                        </div>
+                            <div class="row">
+                                    <!-- COLUMNA DATOS IZQUIERDA -->
+                                    <div class="col-12 col-sm-6">
+                                            <div id="data">
+                                                <h5 class="card-title">Temp <span id="temperatura" class="font-weight-bolder"></span></h5>    
+                                                <h5 class="card-title">Humedad <span id="humedad" class="font-weight-bolder"></span></h5>    
+                                                <h5 class="card-title">Vientos <span id="viento" class="font-weight-bolder"></span></h5>
+                                                <h5 class="card-title">Presión <span id="presion" class="font-weight-bolder"></span></h5>
+                                            </div>    
+                                    </div>    
+                                        <!-- COLUMNA ICONO DERECHA                   -->
+                                        <div class="col-12 col-sm-6 text-center m-auto" id="icon">
+                                            <img id="svgicon" src="img/drop.svg" width="110px" alt="">
+                                        </div>
                             </div>
-                          </div>
+                                
+                            </div>
+                    </div>
             </div>
         </div>
     </div>

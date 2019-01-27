@@ -1,3 +1,5 @@
+obtenerCoordenadas();
+
 function obtenerCoordenadas() {
     if ("geolocation" in navigator) {
         document.querySelector('#data').className += " none";
@@ -9,12 +11,12 @@ function obtenerCoordenadas() {
             let lon = position.coords.longitude;
          consulta(lat, lon);
     });
-        
         } else { 
-            
+           alert("no funciona la geolocalizacion en tu navegador"); 
     }
 }
 
+// consulta a la API mediante fetch
 function consulta(lat,lon) {
     const API_KEY = `4d66756d2f1463d481841de10d882e5a`;
     const URL = 'https://api.openweathermap.org/data/2.5/weather';
@@ -24,13 +26,12 @@ function consulta(lat,lon) {
          return data.json();
      }).then(weather_data => {
          const data = weather_data;
-         console.log(transformarDatos(data));
+         transformarDatos(data);
      });
  }
 
 
- obtenerCoordenadas();
-
+// manipulacion del objeto que devuelve la API para utilizar los datos necesarios.
  function transformarDatos(weather_data) {
     const city = weather_data.name;
     const { weather } = weather_data;
@@ -45,9 +46,10 @@ function consulta(lat,lon) {
         humidity: `${humidity} %`,
         temperature: `${temperature}ºC`,
         weatherState,
-        wind: `${speed} m/s`,
+        wind: `${transformWindSpeed(speed)} km/h`,
         presion: `${pressure} hPa`,
     };
+    transformWindSpeed(data.wind);
     dom(data.city, data.humidity, data.temperature, data.wind, data.weatherState, data.presion);
 }
 
@@ -81,6 +83,13 @@ function getTemp(temp) {
     const K = 273.15;
     let temperature = (temp - K).toFixed(1);
     return temperature;
+}
+
+//transformar m/s a km/h
+function transformWindSpeed(windy) {
+    let viento = parseFloat(windy).toFixed();
+    viento *= 3.6;
+    return viento;
 }
 
 //modificacion del DOM
